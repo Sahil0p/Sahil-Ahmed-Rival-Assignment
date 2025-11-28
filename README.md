@@ -63,15 +63,10 @@ node main.js
 | `large.json` | **1,050** | ✅ PASS | **45ms** |
 | **Performance** | **10,000** | **✅ ~100ms** | **✓** |
 
-> npm test  
-> npm test -- --coverage
-> npm run coverage
+> `npm test`                    # Runs all tests  
+> `npm test -- --coverage`      # Generates 90%+ coverage  
+> `npm run coverage`            # Opens HTML coverage report  
 
-```bash
-npm test               # Runs all tests
-npm test -- --coverage # Generates 90%+ coverage
-npm run coverage       # Opens HTML coverage report
-```
 
 - **Coverage Report:**
 > Statements: 90.27% | Branches: 95.12% | Functions: 96.96% | Lines: 90.11%
@@ -80,7 +75,7 @@ npm run coverage       # Opens HTML coverage report
 
 ## 📊 **Sample Output**
 
-=== RIVAL.IO API LOG ANALYZER ===
+> === RIVAL.IO API LOG ANALYZER ===
 
 ### 📊 SUMMARY:
 
@@ -95,20 +90,20 @@ npm run coverage       # Opens HTML coverage report
 
 ### 💰 COST ANALYSIS (Option A):
 
-> Total Cost: $0.0256
-> Optimization Potential: $0.013 (50%)
-> /api/reports: $0.0132 ($0.0044/req) ← Costliest
+> Total Cost: $0.0256  
+> Optimization Potential: $0.013 (50%)  
+> `/api/reports:` $0.0132 ($0.0044/req) ← Costliest  
 
 ### 🗄️ CACHING OPPORTUNITIES (Option D):
 
-> /api/users: 83% hit rate | Save 5 reqs | $0.002 savings
-> /api/reports: 100% hit rate | Save 2 reqs | $0.0088 savings
+> `/api/users`: 83% hit rate | Save 5 reqs | $0.002 savings  
+> `/api/reports`: 100% hit rate | Save 2 reqs | $0.0088 savings  
 
 ### 💡 RECOMMENDATIONS:
 
-> ✅ Cache /api/users (83% potential)
-> ⚠️ Fix /api/payments (50% errors, 912ms)
-> 🚨 Alert: /api/reports critically slow (2100ms)
+> ✅ Cache /api/users (83% potential)  
+> ⚠️ Fix /api/payments (50% errors, 912ms)  
+> 🚨 Alert: /api/reports critically slow (2100ms)  
 
 --- 
 
@@ -145,10 +140,10 @@ sahil-rival-assignment/
 
 ## 🚀 **npm Scripts**
 
-> npm test # 37 tests, 90%+ coverage
-> npm run demo # Production demo output
-> npm run coverage # HTML coverage report
-> npm run coverage:open # Open coverage in browser
+> npm test # 37 tests, 90%+ coverage  
+> npm run demo # Production demo output  
+> npm run coverage # HTML coverage report  
+> npm run coverage:open # Open coverage in browser  
 
 ---
 
@@ -177,6 +172,7 @@ sahil-rival-assignment/
 
 **Sahil** - Full-Stack Developer  
 [GitHub][https://github.com/yourusername](https://github.com/Sahil0p) | [LinkedIn](https://linkedin.com/in/sahilahmed29)
+
 
 
 
