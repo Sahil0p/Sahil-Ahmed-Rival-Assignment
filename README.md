@@ -30,13 +30,13 @@ npm install
 ### 3. Verify setup
 
 ```
-npm test # 37 tests should pass
+npm test 
 ```
 
-**Dependencies:**
-├── jest (testing)
-├── No runtime dependencies
-└── Pure vanilla Node.js
+> **Dependencies:**  
+> ├── jest (testing)  
+> ├── No runtime dependencies  
+> └── Pure vanilla Node.js  
 
 
 ## How to Run the Function
@@ -54,8 +54,8 @@ const result = analyze_api_logs(logs);
 console.log(JSON.stringify(result, null, 2));
 ```
 
-**Exportable function for serverless deployment:**
-module.exports = { analyze_api_logs };
+> **Exportable function for serverless deployment:**  
+> module.exports = { analyze_api_logs };  
 
 ## How to Run Tests
 
@@ -95,9 +95,9 @@ module.exports = { analyze_api_logs };
   -----------|---------|----------|---------|---------|-------------------
   ```
 > `Test Suites`: 2 passed, 2 total  
-> `Tests`:       39 passed, 39 total  
+> `Tests`:       37 passed, 37 total  
 > `Snapshots`:   0 total  
-> `Time`:        1.437 s  
+> `Time`:        1.033 s   
 
 
 
@@ -190,4 +190,5 @@ module.exports = { analyze_api_logs };
 | 0–1KB     | Tier 1 | $0.00001   |
 | 1–10KB    | Tier 2 | $0.00005   |
 | 10KB+     | Tier 3 | $0.0001    |
+
 
