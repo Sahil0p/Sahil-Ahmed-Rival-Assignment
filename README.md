@@ -63,11 +63,9 @@ node main.js
 | `large.json` | **1,050** | ✅ PASS | **45ms** |
 | **Performance** | **10,000** | **✅ ~100ms** | **✓** |
 
-> ```bash
 > npm test
 > npm test -- --coverage
 > npm run coverage
-> ```
 
 ```bash
 npm test               # Runs all tests
@@ -179,6 +177,7 @@ sahil-rival-assignment/
 
 **Sahil** - Full-Stack Developer  
 [GitHub][https://github.com/yourusername](https://github.com/Sahil0p) | [LinkedIn](https://linkedin.com/in/sahilahmed29)
+
 
 
 
