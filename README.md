@@ -64,9 +64,7 @@ node main.js
 | **Performance** | **10,000** | **✅ ~100ms** | **✓** |
 
 > npm test  
-
 > npm test -- --coverage  
-
 > npm run coverage
 
 ```bash
@@ -179,6 +177,7 @@ sahil-rival-assignment/
 
 **Sahil** - Full-Stack Developer  
 [GitHub][https://github.com/yourusername](https://github.com/Sahil0p) | [LinkedIn](https://linkedin.com/in/sahilahmed29)
+
 
 
 
