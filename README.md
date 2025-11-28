@@ -72,16 +72,16 @@ node main.js
 
 -  `PASS` tests/test_function.test.js
 -  `PASS`  tests/test_edge_cases.test.js
-```
------------|---------|----------|---------|---------|-------------------
-File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
------------|---------|----------|---------|---------|-------------------
-All files  |   90.27 |    95.12 |   96.96 |   90.11 |
- config.js |     100 |      100 |     100 |     100 |
- main.js   |   86.56 |    96.96 |      96 |   87.12 | 347-371
- utils.js  |     100 |    93.87 |     100 |     100 | 27-31
------------|---------|----------|---------|---------|-------------------
-```
+  ```
+  -----------|---------|----------|---------|---------|-------------------
+  File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+  -----------|---------|----------|---------|---------|-------------------
+  All files  |   90.27 |    95.12 |   96.96 |   90.11 |
+   config.js |     100 |      100 |     100 |     100 |
+   main.js   |   86.56 |    96.96 |      96 |   87.12 | 347-371
+   utils.js  |     100 |    93.87 |     100 |     100 | 27-31
+  -----------|---------|----------|---------|---------|-------------------
+  ```
 > `Test Suites`: 2 passed, 2 total  
 > `Tests`:       39 passed, 39 total  
 > `Snapshots`:   0 total  
@@ -127,13 +127,11 @@ All files  |   90.27 |    95.12 |   96.96 |   90.11 |
 
 - Time Complexity: O(N) - Single-pass aggregation
 - Space Complexity: O(E + U) - Endpoints + Unique Users
-
-
-|  Size | Tier | Cost/Log |
-|---------|------|--------|
-| 0-1KB |Tier 1 | $0.00001 |
-| 1-10KB | Tier 2 | $0.00005 |
-| 10KB+ | Tier 3 | $0.0001 |
+  |  Size | Tier | Cost/Log |
+  |---------|------|--------|
+  | 0-1KB |Tier 1 | $0.00001 |
+  | 1-10KB | Tier 2 | $0.00005 |
+  | 10KB+ | Tier 3 | $0.0001 |
 
 ---
 
@@ -179,6 +177,7 @@ sahil-rival-assignment/
 
 **Sahil** - Full-Stack Developer  
 [GitHub][https://github.com/yourusername](https://github.com/Sahil0p) | [LinkedIn](https://linkedin.com/in/sahilahmed29)
+
 
 
 
