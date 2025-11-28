@@ -1,74 +1,86 @@
-# Rival.io API Log Analyzer 🧠
 
-**Production-Ready Serverless Analytics Engine**  
-*90%+ Test Coverage | O(N) Single-Pass | Core + Option A (Cost) + Option D (Caching)*
+# Rival.io API Log Analyzer
 
-[![Tests](https://img.shields.io/badge/tests-37%20passing-brightgreen)](https://github.com/yourusername/sahil-rival-assignment/actions)
-[![Coverage](https://img.shields.io/badge/coverage-90%2B-brightgreen)](https://github.com/yourusername/sahil-rival-assignment/actions)
-[![Node.js](https://img.shields.io/badge/node.js-v18-blue.svg)](https://nodejs.org/)
+## Project Overview
 
-## 🎯 **Project Overview**
+Single-pass **O(N)** serverless API log analyzer implementing **Core requirements + Option A (Cost Analysis) + Option D (Caching Opportunities)**.
 
-- Single-pass **O(N)** analyzer for API serverless logs with:
+**Key Features:**
+- **Core Analytics**: Response times, error rates, endpoint stats, hourly distribution, top users
+- **Option A**: Real AWS Lambda cost analysis with memory tiers (0-1KB/$0.00001, 1-10KB/$0.00005, 10KB+/$0.0001)
+- **Option D**: Caching opportunity detection (≥70% GET, ≤10% errors, ≥3 requests)
 
-| Feature | Status | Description |
-|---------|--------|-------------|
-| **Core Analytics** | ✅ **Complete** | Response times, error rates, hourly trends, top users |
-| **Option A: Cost Analysis** | ✅ **Complete** | Memory tiers, execution costs, optimization potential |
-| **Option D: Caching Opportunities** | ✅ **Complete** | GET-heavy endpoints, savings estimates, TTL recommendations |
+**Production Stats:**
+- **90.27% test coverage** (37 tests passing)
+- **10k logs processed in ~100ms** (<2s requirement)
+- **3 datasets tested**: 15/105/1,050 logs
 
-- **Demo Output Preview:**
-  - 💰 COST ANALYSIS: $0.0256 total | $0.013 savings (50%)
-  - 🗄️ CACHING: 3 endpoints | 9 requests saved | 83-100% hit rate
-  - ⚠️ PERFORMANCE: 4 issues (2 critical)
-
----
-
-## ✨ **Key Capabilities**
-
-- **Performance**: 10k logs processed in **~100ms** (<2s requirement)
-- **Scalability**: O(N) single-pass algorithm
-- **Coverage**: **90%+ test coverage** (37 tests across 3 datasets)
-- **Production Ready**: Input validation, config-driven, modular design
-
----
-
-
-## 🛠️ **Quick Start**
-
-### 1. Clone & Install
+## Setup Instructions (Dependencies & Installation)
+> Prerequisites: Node.js v18+
+### 1. Clone repository
 ```
 git clone <your-repo-url>
 cd sahil-rival-assignment
-npm install
-```
-### 2. Run Tests (90%+ Coverage)
-```
-npm test
 ```
 
-### 3. Run Demo
+### 2. Install dependencies (Jest for testing only)
+```
+npm install
+```
+### 3. Verify setup
+
+```
+npm test # 37 tests should pass
+```
+
+**Dependencies:**
+├── jest (testing)
+├── No runtime dependencies
+└── Pure vanilla Node.js
+
+
+## How to Run the Function
+
+### Demo Mode (Sample Data)
 ```
 node main.js
 ```
 
----
+### Programmatic Usage
+```
+const { analyze_api_logs } = require('./main.js');
+const logs = require('./test_data/sample_small.json');
+const result = analyze_api_logs(logs);
+console.log(JSON.stringify(result, null, 2));
+```
 
-## 🧪 **Test Suite (90%+ Coverage)**
+**Exportable function for serverless deployment:**
+module.exports = { analyze_api_logs };
 
-| Dataset | Logs | Status | Execution Time |
-|---------|------|--------|----------------|
-| `small.json` | **15** | ✅ PASS | **2ms** |
-| `medium.json` | **105** | ✅ PASS | **8ms** |
-| `large.json` | **1,050** | ✅ PASS | **45ms** |
-| **Performance** | **10,000** | **✅ ~100ms** | **✓** |
+## How to Run Tests
 
-> `npm test`                    # Runs all tests  
-> `npm test -- --coverage`      # Generates 90%+ coverage  
-> `npm run coverage`            # Opens HTML coverage report  
+- All tests (37 passing, 90%+ coverage)
+  ```
+    npm test
+  ```
+  
+- Coverage report
+  ```
+    npm test -- --coverage
+  ```
+
+- Specific test file
+  ```
+    npx jest tests/test_function.test.js
+  ```
+
+- Watch mode (development)
+  ```
+    npm test -- --watch
+  ```
 
 
-## **Coverage Report:**
+**Test Results:**
 
 -  `PASS` tests/test_function.test.js
 -  `PASS`  tests/test_edge_cases.test.js
@@ -87,9 +99,20 @@ node main.js
 > `Snapshots`:   0 total  
 > `Time`:        1.437 s  
 
+
+
+**Datasets Tested:**
+| Dataset | Logs | Status |
+|---------|------|--------|
+| small.json | 15 | ✅ PASS |
+| medium.json | 105 | ✅ PASS |
+| large.json | 1,050 | ✅ PASS |
+
 ---
 
-## 📊 **Sample Output**
+## Usage Examples
+
+## 1. Demo Output (`node main.js`)
 
 > === RIVAL.IO API LOG ANALYZER ===
 
@@ -121,76 +144,50 @@ node main.js
 > ⚠️ Fix /api/payments (50% errors, 912ms)  
 > 🚨 Alert: /api/reports critically slow (2100ms)  
 
---- 
+ 
 
-## 🔧 **Complexity Analysis**
-
-- Time Complexity: O(N) - Single-pass aggregation
-- Space Complexity: O(E + U) - Endpoints + Unique Users
-  |  Size | Tier | Cost/Log |
-  |---------|------|--------|
-  | 0-1KB |Tier 1 | $0.00001 |
-  | 1-10KB | Tier 2 | $0.00005 |
-  | 10KB+ | Tier 3 | $0.0001 |
+##2. Custom Configuration
+> const customConfig = {  
+> CACHING_CRITERIA: { MIN_REQUESTS: 5, MIN_GET_RATIO: 0.8 },  
+> RESPONSE_TIME_THRESHOLDS: { MEDIUM: 300 }  
+> };  
+> const result = analyze_api_logs(logs, customConfig);
 
 ---
 
-## 📁 **Project Structure**
-```
-sahil-rival-assignment/
-├── main.js                    # 🎯 Core O(N) analyzer (exportable)
-├── utils.js                   # 🛠️ Validation, cost calc, severity
-├── config.js                  # ⚙️ Zero hardcoding (fully configurable)
-├── package.json               # 📦 npm scripts + deps
-├── README.md                  # 📖 You're reading it!
-├── DESIGN.md                  # 🏗️ Architecture decisions
-└── tests/
-├── test_data/                 # 📁 3 datasets (15/105/1050 logs)
-├── test_function.test.js      # 🧪 Core + Integration (90%+ coverage)
-└── test_edge_cases.test.js    # 🛡️ Edge cases + validation
-```
+
+
+
+## 🧠 Time Complexity and Space Complexity Analysis
+**O(N)**  
+- `N` = Number of log entries  
+- Single-pass: validation + aggregation + cost calculation  
+- No nested loops or heavy operations  
+
+## 🗂️ Space Complexity
+**O(E + U)**  
+- `E` = Unique endpoints (10–50)  
+- `U` = Unique users (100–1000)  
+- Overall auxiliary memory is much smaller than `N` in production
 
 ---
 
-## 📈 **Performance Benchmarks**
+## ⚡ Performance Benchmarks
 
-| Dataset | Logs | Time | Memory | Status |
-|---------|------|------|--------|--------|
-| small | 15 | **2ms** | 5MB | ✅ |
-| medium | 105 | **8ms** | 12MB | ✅ |
-| **large** | **1,050** | **45ms** | 25MB | ✅ |
-| perf | **10k** | **~100ms** | ~80MB | ✅ **<2s req** |
+| Dataset    | Logs   | Time    | Memory |
+|-----------|--------|---------|--------|
+| small     | 15     | 2ms     | 5MB    |
+| medium    | 105    | 8ms     | 12MB   |
+| large     | 1,050  | 45ms    | 25MB   |
+| perf test | 10,000 | ~100ms  | ~80MB  |
 
 ---
 
-## 🎖️ **Why This Implementation Excels**
+## 💲 Memory Cost Tiers (AWS Lambda Pricing)
 
-✅ **Exceeds 80% coverage requirement** (90%+)  
-✅ **Production-grade demo output**  
-✅ **Real serverless pricing model**  
-✅ **Actionable caching recommendations**  
-✅ **Config-driven** (zero magic numbers)  
-✅ **Battle-tested** (37 tests, 3 datasets)  
-✅ **Scales to 10k+ logs** (<2s guaranteed)
-
-## 📬 **Contact**
-
-**Sahil** - Full-Stack Developer  
-[GitHub][https://github.com/yourusername](https://github.com/Sahil0p) | [LinkedIn](https://linkedin.com/in/sahilahmed29)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Size      | Tier   | Cost/Log   |
+|-----------|--------|------------|
+| 0–1KB     | Tier 1 | $0.00001   |
+| 1–10KB    | Tier 2 | $0.00005   |
+| 10KB+     | Tier 3 | $0.0001    |
 
